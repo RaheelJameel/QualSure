@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppCustomMaterialModule } from './app-custom-material-module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppCustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
