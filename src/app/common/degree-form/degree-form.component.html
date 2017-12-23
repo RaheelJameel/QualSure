@@ -1,3 +1,62 @@
-<p>
-  degree-form works!
-</p>
+<div>
+  <p>
+    DegreeFormComponent
+  </p>
+</div>
+<div>
+  <form [formGroup]="degreeForm" (ngSubmit)="submit()">
+    <div>
+      <label>First Name</label>
+      <div>
+        <input type="text" formControlName="firstName">
+      </div>
+    </div>
+    <div>
+      <label>Last Name</label>
+      <div>
+        <input type="text" formControlName="lastName">
+      </div>
+    </div>
+    <div>
+      <label>Degree Type</label>
+      <div>
+        <input type="text" formControlName="degreeType">
+      </div>
+    </div>
+    <div>
+      <label>Field of Study</label>
+      <div>
+        <input type="text" formControlName="field">
+      </div>
+    </div>
+    <div>
+      <label>Graduation Year</label>
+      <div>
+        <input type="number" formControlName="gradYear">
+      </div>
+    </div>
+    <div>
+      <label>Grade Point Average</label>
+      <div>
+        <input type="number" formControlName="gpa">
+      </div>
+    </div>
+    <div>
+      <label>Father First Name</label>
+      <div>
+        <input type="text" formControlName="fatherFirstName">
+      </div>
+    </div>
+    <div>
+      <label>Father Last Name</label>
+      <div>
+        <input type="text" formControlName="fatherLastName">
+      </div>
+    </div>
+    <div>
+      <button type="submit">
+        Finish
+      </button>
+    </div>
+  </form>
+</div>
