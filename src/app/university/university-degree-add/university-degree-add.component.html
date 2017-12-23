@@ -4,5 +4,5 @@
   </p>
 </div>
 <div>
-  <app-degree-form></app-degree-form>
+  <app-degree-form [degreeModel]="initDegreeModel" (degreeOutput)="formSubmit($event)"></app-degree-form>
 </div>
