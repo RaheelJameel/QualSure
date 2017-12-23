@@ -1,0 +1,46 @@
+<div *ngIf="degree">
+  <h2>Degree Details</h2>
+  <div><span>id: </span>{{degree.id}}</div>
+  <div>
+    <label>firstName:
+      <input [(ngModel)]="degree.firstName" placeholder="firstName"/>
+    </label>
+  </div>
+  <div>
+    <label>lastName:
+      <input [(ngModel)]="degree.lastName" placeholder="lastName"/>
+    </label>
+  </div>
+  <div>
+    <label>degreeType:
+      <input [(ngModel)]="degree.degreeType" placeholder="degreeType"/>
+    </label>
+  </div>
+  <div>
+    <label>field:
+      <input [(ngModel)]="degree.field" placeholder="field"/>
+    </label>
+  </div>
+  <div>
+    <label>gradYear:
+      <input [(ngModel)]="degree.gradYear" placeholder="gradYear"/>
+    </label>
+  </div>
+  <div>
+    <label>gpa:
+      <input [(ngModel)]="degree.gpa" placeholder="gpa"/>
+    </label>
+  </div>
+  <div>
+    <label>fatherFirstName:
+      <input [(ngModel)]="degree.fatherFirstName" placeholder="fatherFirstName"/>
+    </label>
+  </div>
+  <div>
+    <label>fatherLastName:
+      <input [(ngModel)]="degree.fatherLastName" placeholder="fatherLastName"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

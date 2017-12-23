@@ -1,0 +1,18 @@
+<h2>All Degrees</h2>
+
+
+
+<ul class="degrees">
+  <li *ngFor="let degree of degrees">
+    <a routerLink="../detail/{{degree.id}}">
+      <span class="badge">{{degree.id}}</span> {{degree.firstName}} {{degree.lastName}}
+    </a>
+    <button class="delete" title="delete degree"
+    (click)="delete(degree)">x</button>
+  </li>
+</ul>
+
+<br>
+<br>
+<app-degree-search></app-degree-search>
+
