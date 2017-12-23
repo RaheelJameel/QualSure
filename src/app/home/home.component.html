@@ -1,9 +1,13 @@
-<div>
-  <p>
-    HomeComponent
-  </p>
-  <div>
-    <a routerLink="/university">University</a>
-    <a routerLink="/verify">Verify</a>
+<mat-toolbar class="app-navbar" color="primary">
+  <span>QualSure</span>
+  <span class="example-fill-remaining-space"></span>
+  <span><a routerLink="/university">University</a></span>
+  <span class="toolbar-button-padding"><a routerLink="/verify">Verify</a></span>
+</mat-toolbar>
+
+<div class="div-container">
+  <div *ngFor="let content of fillerContent">
+    <p>{{content}}</p>
   </div>
 </div>
+

@@ -9,4 +9,4 @@ import { MatToolbarModule } from '@angular/material';
     MatToolbarModule
   ],
 })
-export class AppCustomMaterialModule { }
+export class HomeCustomMaterialModule { }
