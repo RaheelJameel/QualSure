@@ -5,6 +5,7 @@ import { UniversityHomeComponent } from './university-home/university-home.compo
 import { UniversityLoginComponent } from './university-login/university-login.component';
 import { UniversitySignupComponent } from './university-signup/university-signup.component';
 import { UniversityProfileComponent } from './university-profile/university-profile.component';
+import { UniversityDegreeAddComponent } from './university-degree-add/university-degree-add.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: UniversityProfileComponent
+      },
+      {
+        path: 'add',
+        component: UniversityDegreeAddComponent
       }
     ]
   }

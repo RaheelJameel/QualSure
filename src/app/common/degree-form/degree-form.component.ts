@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Degree } from './degree';
+
 @Component({
   selector: 'app-degree-form',
   templateUrl: './degree-form.component.html',
