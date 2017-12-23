@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UniversityRoutingModule } from './university-routing.module';
 
 import { UniversityComponent } from './university.component';
-import { UniversityHomeComponent } from './university-home/university-home.component';
 import { UniversityLoginComponent } from './university-login/university-login.component';
 import { UniversitySignupComponent } from './university-signup/university-signup.component';
 import { UniversityProfileComponent } from './university-profile/university-profile.component';
@@ -19,7 +18,6 @@ import { UniversityProfileComponent } from './university-profile/university-prof
   ],
   declarations: [
     UniversityComponent,
-    UniversityHomeComponent,
     UniversityLoginComponent,
     UniversitySignupComponent,
     UniversityProfileComponent

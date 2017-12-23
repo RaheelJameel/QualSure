@@ -13,7 +13,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: UniversityHomeComponent
+        loadChildren: './university-home/university-home.module#UniversityHomeModule'
+      },
+      {
+        path: 'home',
+        loadChildren: './university-home/university-home.module#UniversityHomeModule'
       },
       {
         path: 'login',
