@@ -1,4 +1,7 @@
 <mat-toolbar class="app-navbar" color="primary">
+  <button mat-icon-button  (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span>QualSure</span>
   <span class="example-fill-remaining-space"></span>
   <span><a routerLink="/university">University</a></span>
@@ -6,8 +9,16 @@
 </mat-toolbar>
 
 <div class="div-container">
-  <div *ngFor="let content of fillerContent">
-    <p>{{content}}</p>
-  </div>
-</div>
+  <mat-sidenav-container>
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/university">University</a>
+        <a mat-list-item routerLink="/verify">Verify</a>
+      </mat-nav-list>
+    </mat-sidenav>
 
+    <mat-sidenav-content>
+      <p *ngFor="let content of fillerContent">{{content}}</p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
