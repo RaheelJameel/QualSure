@@ -3,7 +3,7 @@
     DegreeVerifyComponent
   </p>
 </div>
-<app-degree-form *ngIf="!submitted" (degreeOutput)="formSubmit($event)"></app-degree-form>
+<app-degree1-form *ngIf="!submitted" (degreeOutput)="formSubmit($event)"></app-degree1-form>
 <div *ngIf="submitted && !valid && !invalid">
   <p>
     Verifying Degree Please Wait...
