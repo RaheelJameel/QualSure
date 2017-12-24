@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Degree } from '../degree';
 import { DegreeService } from '../degree.service';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -11,10 +13,15 @@ import { DegreeService } from '../degree.service';
 export class DegreesComponent implements OnInit {
   degrees: Degree[];
 
-  constructor(private degreeService: DegreeService) { }
+  constructor(private degreeService: DegreeService,
+              private router: Router) { }
 
   ngOnInit() {
     this.getDegrees();
+  }
+  goToDetail(id: number): void {
+    this.router.navigateByUrl('university/detail/' + id);
+
   }
 
   getDegrees(): void {
