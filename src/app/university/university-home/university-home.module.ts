@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 
@@ -10,11 +10,15 @@ import { AppRoutingModule } from './university-home-routing.module';
 
 import { UniversityHomeComponent } from './university-home.component';
 import { DegreeDetailComponent } from './degree-detail/degree-detail.component';
+import { UniversityDegreeAddComponent } from './university-degree-add/university-degree-add.component';
+import { DegreeFormComponent } from '../../common/degree-form/degree-form.component';
+
 import { DegreeSearchComponent } from './degree-search/degree-search.component';
 import { DegreesComponent } from './degrees/degrees.component';
 import { DegreeService } from './degree.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
+import { DegreeAddComponent } from './degree-add/degree-add.component';
 
 @NgModule({
   imports: [
@@ -22,6 +26,7 @@ import { MessagesComponent } from './messages/messages.component';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -32,10 +37,13 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   declarations: [
     UniversityHomeComponent,
+    DegreeFormComponent,
+    UniversityDegreeAddComponent,
     DegreesComponent,
     DegreeDetailComponent,
     DegreeSearchComponent,
-    MessagesComponent
+    MessagesComponent,
+    DegreeAddComponent
   ],
   providers: [ DegreeService, MessageService ],
 })
