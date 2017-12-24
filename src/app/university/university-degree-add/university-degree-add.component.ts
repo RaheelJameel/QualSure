@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Degree } from '../../common/degree-form/degree';
+import { DegreeService } from '../university-home/degree.service';
 
 @Component({
   selector: 'app-uni-degree-add',
@@ -12,7 +13,9 @@ export class UniversityDegreeAddComponent implements OnInit {
   initDegreeModel: Degree;
   newDegreeModel: Degree;
 
-  constructor() { }
+  constructor(
+    private degreeService: DegreeService,
+  ) { }
 
   ngOnInit() {
     this.initData();
@@ -35,7 +38,10 @@ export class UniversityDegreeAddComponent implements OnInit {
   formSubmit(degreeModel: Degree) {
     console.log('UniversityDegreeAddComponent: formSubmit called with degree->', degreeModel);
     this.newDegreeModel = degreeModel;
-    alert('Form Submitted: Check console');
+    this.degreeService.addDegree(this.newDegreeModel)
+        .subscribe(() => {
+          alert('Done');
+        });
   }
 
 }

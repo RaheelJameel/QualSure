@@ -5,7 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Degree } from './degree';
+// import { Degree } from './degree';
+import { Degree } from '../../common/degree-form/degree';
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -70,7 +71,7 @@ export class DegreeService {
   /** POST: add a new degree to the server */
   addDegree (degree: Degree): Observable<Degree> {
     return this.http.post<Degree>(this.degreesUrl, degree, httpOptions).pipe(
-      tap((degree: Degree) => this.log(`added degree w/ id=${degree.id}`)),
+      tap((returnedDegree: Degree) => this.log(`added degree w/ id=${returnedDegree.id}`)),
       catchError(this.handleError<Degree>('addDegree'))
     );
   }

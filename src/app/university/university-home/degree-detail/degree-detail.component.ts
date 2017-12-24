@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Degree } from '../degree';
+import { Degree } from '../../../common/degree-form/degree';
 import { DegreeService } from '../degree.service';
 
 

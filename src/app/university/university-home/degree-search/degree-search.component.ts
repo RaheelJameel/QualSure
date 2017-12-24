@@ -8,7 +8,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
- import { Degree } from '../degree';
+ import { Degree } from '../../../common/degree-form/degree';
  import { DegreeService } from '../degree.service';
  
 

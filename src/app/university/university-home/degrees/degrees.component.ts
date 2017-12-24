@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Degree } from '../degree';
+import { Degree } from '../../../common/degree-form/degree';
 import { DegreeService } from '../degree.service';
 import {Router} from '@angular/router';
 
