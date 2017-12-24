@@ -1,9 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Degree } from '../common/degree-form/degree';
+import { DegreeService } from '../university/university-home/degree.service';
 
 @Component({
-  selector: 'app-verify',
+  selector: 'app-degree-verify',
   templateUrl: './verify.component.html',
-  styleUrls: ['./verify.component.css']
+  styleUrls: ['./verify.component.scss']
 })
-export class VerifyComponent {
+export class VerifyComponent implements OnInit {
+
+  newDegreeModel: Degree;
+  submitted: boolean;
+  valid: boolean;
+  invalid: boolean;
+
+  constructor(
+    private degreeService: DegreeService
+  ) { }
+
+  ngOnInit() {
+  }
+
+  formSubmit(degreeModel: Degree) {
+    this.submitted = true;
+    /*
+    degreeModel = {
+      firstName: 'Alpha',
+      lastName: 'Bravo',
+      degreeType: 'BS',
+      field: 'CS',
+      gradYear: 2018,
+      gpa: 3.5,
+      fatherFirstName: 'Charlie',
+      fatherLastName: 'Khan'
+    };
+    */
+    console.log('DegreeVerifyComponent: formSubmit called with degree->', degreeModel);
+    this.newDegreeModel = degreeModel;
+    this.degreeService.searchExactDegree(this.newDegreeModel)
+        .subscribe((value: Degree[]) => {
+          if (value.length) {
+            this.valid = true;
+          } else {
+            this.invalid = true;
+          }
+        });
+  }
 }
