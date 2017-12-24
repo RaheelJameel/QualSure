@@ -3,6 +3,9 @@ import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { Degree } from './degree';
 
+import { EmptyStringValidator } from '../validators/empty-string';
+import { NonNegativeNumberValidator } from '../validators/non-negative-number';
+
 @Component({
   selector: 'app-degree-form',
   templateUrl: './degree-form.component.html',
@@ -15,6 +18,8 @@ export class DegreeFormComponent implements OnInit {
 
   degreeForm: FormGroup;
 
+  formInvalid: boolean;
+
   constructor(
     private formBuilder: FormBuilder
   ) { }
@@ -25,22 +30,25 @@ export class DegreeFormComponent implements OnInit {
 
   private initializeForm() {
     this.degreeForm = this.formBuilder.group({
-      firstName: [this.degreeModel ? this.degreeModel.firstName : '', Validators.required],
-      lastName: [this.degreeModel ? this.degreeModel.lastName : '', Validators.required],
-      degreeType: [this.degreeModel ? this.degreeModel.degreeType : '', Validators.required],
-      field: [this.degreeModel ? this.degreeModel.field : '', Validators.required],
-      gradYear: [this.degreeModel ? this.degreeModel.gradYear : '', Validators.required],
-      gpa: [this.degreeModel ? this.degreeModel.gpa : '', Validators.required],
-      fatherFirstName: [this.degreeModel ? this.degreeModel.fatherFirstName : '', Validators.required],
-      fatherLastName: [this.degreeModel ? this.degreeModel.fatherLastName : '', Validators.required]
+      firstName: [this.degreeModel ? this.degreeModel.firstName : '', [Validators.required, EmptyStringValidator]],
+      lastName: [this.degreeModel ? this.degreeModel.lastName : '', [Validators.required, EmptyStringValidator]],
+      degreeType: [this.degreeModel ? this.degreeModel.degreeType : '', [Validators.required, EmptyStringValidator]],
+      field: [this.degreeModel ? this.degreeModel.field : '', [Validators.required, EmptyStringValidator]],
+      gradYear: [this.degreeModel ? this.degreeModel.gradYear : '', [Validators.required, NonNegativeNumberValidator]],
+      gpa: [this.degreeModel ? this.degreeModel.gpa : '', [Validators.required, NonNegativeNumberValidator]],
+      fatherFirstName: [this.degreeModel ? this.degreeModel.fatherFirstName : '', [Validators.required, EmptyStringValidator]],
+      fatherLastName: [this.degreeModel ? this.degreeModel.fatherLastName : '', [Validators.required, EmptyStringValidator]]
     });
   }
 
   submit() {
+    this.formInvalid = false;
     console.log('DegreeFormComponent: Submit called');
     if (this.degreeForm.valid) {
       console.log('DegreeFormComponent: degreeForm Valid; emitting output');
       this.degreeOutput.emit(this.degreeForm.value);
+    } else {
+      this.formInvalid = true;
     }
   }
 
