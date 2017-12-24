@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UniversityHomeComponent } from './university-home.component';
+import { UniversityDegreeAddComponent } from './university-degree-add/university-degree-add.component';
 
 import { DegreeDetailComponent } from './degree-detail/degree-detail.component';
 import { DegreesComponent } from './degrees/degrees.component';
@@ -17,11 +18,12 @@ const routes: Routes = [
     component: UniversityHomeComponent,
     children: [
       {
-        path: '',
-      },
-      {
         path: 'degrees',
         component: DegreesComponent
+      },
+      {
+        path: 'addNewDegree',
+        component: UniversityDegreeAddComponent
       },
       {
         path: 'detail/:id',
