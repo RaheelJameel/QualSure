@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DegreeAddComponent } from './degree-add.component';
+import { DegreeVerifyComponent } from './degree-verify.component';
 
-describe('DegreeAddComponent', () => {
-  let component: DegreeAddComponent;
-  let fixture: ComponentFixture<DegreeAddComponent>;
+describe('DegreeVerifyComponent', () => {
+  let component: DegreeVerifyComponent;
+  let fixture: ComponentFixture<DegreeVerifyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DegreeAddComponent ]
+      declarations: [ DegreeVerifyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DegreeAddComponent);
+    fixture = TestBed.createComponent(DegreeVerifyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
