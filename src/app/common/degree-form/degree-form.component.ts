@@ -31,6 +31,10 @@ export class DegreeFormComponent implements OnInit {
 
   private initializeForm() {
     this.degreeForm = this.formBuilder.group({
+      id: [{
+        value: this.degreeModel ? this.degreeModel.id : '',
+        disabled: true
+      }],
       firstName: [this.degreeModel ? this.degreeModel.firstName : '', [Validators.required, EmptyStringValidator]],
       lastName: [this.degreeModel ? this.degreeModel.lastName : '', [Validators.required, EmptyStringValidator]],
       degreeType: [this.degreeModel ? this.degreeModel.degreeType : '', [Validators.required, EmptyStringValidator]],
@@ -46,8 +50,14 @@ export class DegreeFormComponent implements OnInit {
     this.formInvalid = false;
     console.log('DegreeFormComponent: Submit called');
     if (this.degreeForm.valid) {
-      console.log('DegreeFormComponent: degreeForm Valid; emitting output');
-      this.degreeOutput.emit(this.degreeForm.value);
+      let formValue: Degree;
+      if (this.degreeModel && this.degreeModel.id) {
+        formValue = this.degreeForm.getRawValue();
+      } else {
+        formValue = this.degreeForm.value;
+      }
+      console.log('DegreeFormComponent: degreeForm Valid; emitting output: ', formValue);
+      this.degreeOutput.emit(formValue);
     } else {
       this.formInvalid = true;
     }

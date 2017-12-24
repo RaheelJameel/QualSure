@@ -8,7 +8,7 @@
     <div *ngIf="degreeModel && degreeModel.id">
       <label>ID</label>
       <div>
-        <input type="text" [(ngModel)]="degreeModel.id" [ngModelOptions]="{standalone: true}" [disabled]="true">
+        <input type="text" formControlName="id">
       </div>
     </div>
     <div>
