@@ -10,11 +10,17 @@
       <div>
         <input type="text" formControlName="firstName">
       </div>
+      <div *ngIf="(degreeForm.get('firstName').touched || formInvalid) && degreeForm.get('firstName').invalid">
+        <small style="color:crimson">*First Name is required</small>
+      </div>
     </div>
     <div>
       <label>Last Name</label>
       <div>
         <input type="text" formControlName="lastName">
+      </div>
+      <div *ngIf="(degreeForm.get('lastName').touched || formInvalid) && degreeForm.get('lastName').invalid">
+        <small style="color:crimson">*Last Name is required</small>
       </div>
     </div>
     <div>
@@ -22,11 +28,17 @@
       <div>
         <input type="text" formControlName="degreeType">
       </div>
+      <div *ngIf="(degreeForm.get('degreeType').touched || formInvalid) && degreeForm.get('degreeType').invalid">
+        <small style="color:crimson">*Degree Type is required</small>
+      </div>
     </div>
     <div>
       <label>Field of Study</label>
       <div>
         <input type="text" formControlName="field">
+      </div>
+      <div *ngIf="(degreeForm.get('field').touched || formInvalid) && degreeForm.get('field').invalid">
+        <small style="color:crimson">*Field of Study is required</small>
       </div>
     </div>
     <div>
@@ -34,29 +46,50 @@
       <div>
         <input type="number" formControlName="gradYear">
       </div>
+      <div *ngIf="(degreeForm.get('gradYear').touched || formInvalid) && (degreeForm.get('gradYear').invalid && !degreeForm.get('gradYear').errors.negNumber)">
+        <small style="color:crimson">*Graduation Year is required</small>
+      </div>
+      <div *ngIf="(degreeForm.get('gradYear').touched || formInvalid) && (degreeForm.get('gradYear').invalid && degreeForm.get('gradYear').errors.negNumber)">
+        <small style="color:crimson">*Graduation Year cannot be negative</small>
+      </div>
     </div>
     <div>
       <label>Grade Point Average</label>
       <div>
         <input type="number" formControlName="gpa">
       </div>
-    </div>
-    <div>
-      <label>Father First Name</label>
-      <div>
-        <input type="text" formControlName="fatherFirstName">
+      <div *ngIf="(degreeForm.get('gpa').touched || formInvalid) && (degreeForm.get('gpa').invalid && !degreeForm.get('gpa').errors.negNumber)">
+        <small style="color:crimson">*Grade Point Average is required</small>
+      </div>
+      <div *ngIf="(degreeForm.get('gpa').touched || formInvalid) && (degreeForm.get('gpa').invalid && degreeForm.get('gpa').errors.negNumber)">
+        <small style="color:crimson">*Grade Point Average cannot be negative</small>
       </div>
     </div>
     <div>
-      <label>Father Last Name</label>
+      <label>Father's First Name</label>
+      <div>
+        <input type="text" formControlName="fatherFirstName">
+      </div>
+      <div *ngIf="(degreeForm.get('fatherFirstName').touched || formInvalid) && degreeForm.get('fatherFirstName').invalid">
+        <small style="color:crimson">*Father's First Name is required</small>
+      </div>
+    </div>
+    <div>
+      <label>Father's Last Name</label>
       <div>
         <input type="text" formControlName="fatherLastName">
+      </div>
+      <div *ngIf="(degreeForm.get('fatherLastName').touched || formInvalid) && degreeForm.get('fatherLastName').invalid">
+        <small style="color:crimson">*Father's Last Name is required</small>
       </div>
     </div>
     <div>
       <button type="submit">
         Submit
       </button>
+      <div *ngIf="formInvalid && degreeForm.invalid">
+        <small style="color:crimson">*Form is Invalid</small>
+      </div>
     </div>
   </form>
 </div>
