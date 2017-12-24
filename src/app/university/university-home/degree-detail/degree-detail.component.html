@@ -1,0 +1,74 @@
+<div *ngIf="degree">
+
+    <h2>Degree Details</h2>
+    <div class="row">
+
+      <div class="col-md">
+        <label>ID:
+          <input [disabled]="true" [(ngModel)]="degree.id" placeholder="ID" />
+        </label>
+      </div>
+      <div class="col-md">
+        <label>First&nbsp;Name:
+          <input [(ngModel)]="degree.firstName" placeholder="firstName" />
+        </label>
+      </div>
+      <div class="col-md">
+        <label>Last&nbsp;Name:
+          <input [(ngModel)]="degree.lastName" placeholder="lastName" />
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <label>Degree&nbsp;Type:
+          <input [(ngModel)]="degree.degreeType" placeholder="degreeType" />
+        </label>
+      </div>
+      <div class="col-md">
+        <label>Field:
+          <input [(ngModel)]="degree.field" placeholder="field" />
+        </label>
+      </div>
+      <div class="col-md">
+        <label>Graduation&nbsp;Year:
+          <input [(ngModel)]="degree.gradYear" placeholder="gradYear" />
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <label>GPA:
+          <input [(ngModel)]="degree.gpa" placeholder="gpa" />
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label>Father's&nbsp;First&nbsp;Name:
+          <input [(ngModel)]="degree.fatherFirstName" placeholder="fatherFirstName" />
+        </label>
+      </div>
+      <div class="col-md-4">
+        <label >Father's&nbsp;Last&nbsp;Name:
+          <input [(ngModel)]="degree.fatherLastName" placeholder="fatherLastName" />
+        </label>
+      </div>
+    </div>
+    
+    <br>
+    <div class="row">
+
+      <div class="col-md-3">
+
+        <button (click)="goBack()">Previous Page</button>
+      </div>
+      <div class="col-md-3">
+
+        <button (click)="save()">Save Changes</button>
+      </div>
+    </div>
+
+  </div>
+
+

@@ -1,0 +1,42 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Graduation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let degree of degrees"
+    (click)="goToDetail(degree.id)">
+      <!-- <a routerLink="../detail/{{degree.id}}"> -->
+      <th scope="row">{{degree.id}}</th>
+      <td>{{degree.firstName}}</td>
+      <td>{{degree.lastName}}</td>
+      <td>{{degree.gradYear}}</td>
+      
+        <button class="delete" title="delete degree"
+          (click)="delete(degree)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+      
+      <!-- </a> -->
+    </tr>
+
+          
+  </tbody>
+</table>
+
+<ul class="degrees">
+  <li *ngFor="let degree of degrees">
+    <a routerLink="../detail/{{degree.id}}">
+      <span class="badge">{{degree.id}}</span> {{degree.firstName}} {{degree.lastName}}
+    </a>
+    <button class="delete" title="delete degree"
+    (click)="delete(degree)">x</button>
+  </li>
+</ul>
+
+<br>
+<br>
+<app-degree-search></app-degree-search>
+

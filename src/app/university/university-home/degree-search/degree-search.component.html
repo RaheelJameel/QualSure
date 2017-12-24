@@ -1,0 +1,21 @@
+<div id="search-component">
+  <h4>Degree Search by First Name</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+<!-- 
+  <ul class="search-result">
+    <li *ngFor="let degree of degrees$ | async" >
+      <a routerLink="/detail/{{degree.id}}">
+        {{degree.firstName}} {{degree.lastName}}
+      </a>
+    </li>
+  </ul>
+</div> -->
+<div class="list-group">
+    <div *ngFor="let degree of degrees$ | async">
+    <a  class="list-group-item" routerLink="../detail/{{degree.id}}">
+      {{degree.firstName}} {{degree.lastName}}
+    </a>
+    </div>
+    
+  </div>
