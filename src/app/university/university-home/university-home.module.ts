@@ -18,7 +18,6 @@ import { DegreesComponent } from './degrees/degrees.component';
 import { DegreeService } from './degree.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
-import { DegreeVerifyComponent } from './degree-verify/degree-verify.component';
 
 @NgModule({
   imports: [
@@ -43,7 +42,6 @@ import { DegreeVerifyComponent } from './degree-verify/degree-verify.component';
     DegreeDetailComponent,
     DegreeSearchComponent,
     MessagesComponent,
-    DegreeVerifyComponent,
   ],
   providers: [ DegreeService, MessageService ],
 })

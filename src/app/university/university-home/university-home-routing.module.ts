@@ -5,7 +5,6 @@ import { UniversityDegreeAddComponent } from './university-degree-add/university
 
 import { DegreeDetailComponent } from './degree-detail/degree-detail.component';
 import { DegreesComponent } from './degrees/degrees.component';
-import { DegreeVerifyComponent } from './degree-verify/degree-verify.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/degrees', pathMatch: 'full' },
@@ -29,10 +28,6 @@ const routes: Routes = [
       {
         path: 'detail/:id',
         component: DegreeDetailComponent
-      },
-      {
-        path: 'verify',
-        component: DegreeVerifyComponent
       },
     ]
   }
