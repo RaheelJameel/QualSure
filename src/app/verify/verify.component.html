@@ -1,9 +1,21 @@
 <div>
   <p>
-    VerifyComponent
+    DegreeVerifyComponent
   </p>
-  <div>
-    <a routerLink="../">Back</a>
-    <a routerLink="./">Home</a>
-  </div>
+</div>
+<app-degree-form *ngIf="!submitted" (degreeOutput)="formSubmit($event)"></app-degree-form>
+<div *ngIf="submitted && !valid && !invalid">
+  <p>
+    Verifying Degree Please Wait...
+  </p>
+</div>
+<div *ngIf="submitted && valid">
+  <h2>
+    Degree Verified!
+  </h2>
+</div>
+<div *ngIf="submitted && invalid">
+  <h2>
+    Invalid Degree!
+  </h2>
 </div>
