@@ -5,6 +5,12 @@
 </div>
 <div>
   <form [formGroup]="degreeForm" (ngSubmit)="submit()">
+    <div *ngIf="degreeModel && degreeModel.id">
+      <label>ID</label>
+      <div>
+        <input type="text" [(ngModel)]="degreeModel.id" [ngModelOptions]="{standalone: true}" [disabled]="true">
+      </div>
+    </div>
     <div>
       <label>First&nbsp;Name</label>
       <div>
@@ -85,7 +91,7 @@
     </div>
     <div>
       <button type="submit">
-        Submit
+        {{submitButtonText}}
       </button>
       <div *ngIf="formInvalid && degreeForm.invalid">
         <small style="color:crimson">*Form is Invalid</small>
