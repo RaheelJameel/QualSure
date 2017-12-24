@@ -34,7 +34,10 @@ export class DegreeDetailComponent implements OnInit {
     this.location.back();
   }
 
- save(): void {
+ save(degreeModel?: Degree): void {
+   if (degreeModel) {
+    this.degree = degreeModel;
+   }
     this.degreeService.updateDegree(this.degree)
       .subscribe(() => this.goBack());
   }
