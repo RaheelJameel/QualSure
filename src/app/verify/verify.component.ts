@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { Degree } from '../common/degree-form/degree';
 import { DegreeService } from '../university/university-home/degree.service';
@@ -16,10 +17,15 @@ export class VerifyComponent implements OnInit {
   invalid: boolean;
 
   constructor(
-    private degreeService: DegreeService
+    private degreeService: DegreeService,
+    private location: Location
+
   ) { }
 
   ngOnInit() {
+  }
+  goBack(): void {
+    this.location.back();
   }
 
   formSubmit(degreeModel: Degree) {
