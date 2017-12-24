@@ -65,6 +65,24 @@ export class DegreeService {
     );
   }
 
+  /* GET degree which exactly matches the degree object */
+  searchExactDegree(degree: Degree): Observable<Degree[]> {
+    const degreeKeys: string[] = Object.keys(degree);
+    let params = '';
+
+    for (let i = 0; i < degreeKeys.length; i++) {
+      if (i !== 0) {
+        params += '&';
+      }
+      params += degreeKeys[i] + '=^' + degree[degreeKeys[i]] + '$';
+    }
+
+    return this.http.get<Degree[]>(`api/degrees/?${params}`).pipe(
+      tap(abc => this.log(`found degrees matching "${abc}"`)),
+      catchError(this.handleError<Degree[]>('searchDegrees', []))
+    );
+  }
+
   //////// Save methods //////////
 
   /** POST: add a new degree to the server */
@@ -115,6 +133,6 @@ export class DegreeService {
   }
 
   private log(message: string) {
-    this.messageService.add('DegreeService: ' + message);
+    console.log('DegreeService: ', message);
   }
 }

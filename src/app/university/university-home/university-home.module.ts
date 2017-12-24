@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -18,7 +18,7 @@ import { DegreesComponent } from './degrees/degrees.component';
 import { DegreeService } from './degree.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
-import { DegreeAddComponent } from './degree-add/degree-add.component';
+import { DegreeVerifyComponent } from './degree-verify/degree-verify.component';
 
 @NgModule({
   imports: [
@@ -32,7 +32,7 @@ import { DegreeAddComponent } from './degree-add/degree-add.component';
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { delay: 2000, dataEncapsulation: false }
     )
   ],
   declarations: [
@@ -43,7 +43,7 @@ import { DegreeAddComponent } from './degree-add/degree-add.component';
     DegreeDetailComponent,
     DegreeSearchComponent,
     MessagesComponent,
-    DegreeAddComponent
+    DegreeVerifyComponent,
   ],
   providers: [ DegreeService, MessageService ],
 })
