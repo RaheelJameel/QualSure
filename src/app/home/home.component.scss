@@ -1,20 +1,27 @@
-.move-up {
+/*.move-up {
   top: -14px;
 }
-
+*/
 .view {
-  background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+  background: url("/assets/images/background.jpg")no-repeat center center;
   background-size: cover;
+  
+}
+
+.view .white-text {
+  position: relative;
+  bottom: 100px;
 }
 
 .text-center .partners p{
   text-align: center;
 }
 
+/* not being used rn
 .text-center h2 {
   margin: 45px;
 }
-
+*/
 
 
 
@@ -40,6 +47,7 @@
   height: auto;
 }
 
+
 .why-blockchain img {
   width: 500px;
   float: left;
@@ -50,6 +58,9 @@
 }
 
 
+
+
+/*
 html,body
 {
     width: 100%;
@@ -58,6 +69,7 @@ html,body
     padding: 0px;
     overflow-x: hidden; 
 }
+*/
 
 /*.example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox. 
