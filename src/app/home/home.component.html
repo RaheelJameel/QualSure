@@ -1,105 +1,70 @@
-<mat-toolbar class="app-navbar" color="primary">
-  <button mat-icon-button  (click)="snav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>QualSure</span>
-  <span class="example-fill-remaining-space"></span>
-  <span><a routerLink="/university">University</a></span>
-  <span class="toolbar-button-padding"><a routerLink="/verify">Verify</a></span>
-</mat-toolbar>
+<header>
 
-<div class="div-container">
-  <mat-sidenav-container>
-    <mat-sidenav #snav>
-      <mat-nav-list>
-        <a mat-list-item routerLink="/university">University</a>
-        <a mat-list-item routerLink="/verify">Verify</a>
-      </mat-nav-list>
-    </mat-sidenav>
 
-    <mat-sidenav-content>
-      <div class="div-card">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>CV of the Future</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="" alt="IMG">
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="" alt="IMG">
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="" alt="IMG">
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-      <p *ngFor="let content of fillerContent">{{content}}</p>
-
-      <div class="app-bottombar">
-        <mat-grid-list cols="3" rowHeight="50px">
-          <mat-grid-tile
-              [colspan]="1"
-              [rowspan]="1">
-            <p>© QualSure</p>
-          </mat-grid-tile>
-          <mat-grid-tile
-              [colspan]="1"
-              [rowspan]="1">
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-            <a href="#">Contact</a>
-          </mat-grid-tile>
-          <mat-grid-tile
-              [colspan]="1"
-              [rowspan]="1">
-            <a href="#">Facebook</a>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
-
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <div class="view intro hm-purple-light move-up">
+    <div class="full-bg-img flex-center">
+        <div class="container text-center white-text wow fadeInUp">
+            <h1 style="font-size:55px;"><b>CV of the Future!</b> </h1>
+            <br>
+            <h5>Still have to verify your credentials manually?</h5>
+            <p>Still have to wait for weeks to get your qualtifications verified?</p>
+            <br>
+            <h4>Let us take care of that! <br><br><b> Get your credentials verified in 10 seconds!</b></h4>
+        </div>
+    </div>
 </div>
+</header>
+
+
+
+<body>
+    <main class="text-center py-5"> <!-- py-5">  -->
+            <div class="container alt-style">
+                <div class="partners">
+                    <h1><b>Our Partners</b></h1>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src= '/assets/images/GIKI.jpg' alt="GIKI LOGO" width="150px">
+                            <p>GIKI</p>    
+                        </div>
+                        <div class="col-md-4">
+                            <img src= '/assets/images/NUST.jpg' alt="NUST LOGO" width="150px">
+                            <p>NUST</p>    
+                        </div>
+                        <div class="col-md-4">
+                            <img src= '/assets/images/LUMS.png' alt="LUMS LOGO" width="150px">
+                            <p>LUMS </p>    
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="what-we-do">
+                    <h1><b>What We Do</b></h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="/assets/images/qr-code.png" alt="Sample QR Code">
+                            <br> <p style="text-align: justify">We help universitites anchor their issued degrees and/or qualifications to Ethereum Blockchain.<br><br>
+                                We make credentials become immutable, compeletely secure and transparent for everyone. <br> <br>
+                            We provide students with QR codes which van be used to get their academic qualifications verified instantly.</p>
+                           <br><br> <h4>All of this, within <b>10 seconds!</b></h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-blockchain">
+                        <h1><b>Why Ethereum Blockchain?</b></h1>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="assets/images/ethereum-blockchain.png" alt="Ethereum Blockchain">
+                                <br><br> <p>With no center point of failure and secured cryptography, applications are well protected against hacking and fraudulent activities.
+                                    All anchored credentials can be instantly verified by anybody and anywhere.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </main>
+</body>
