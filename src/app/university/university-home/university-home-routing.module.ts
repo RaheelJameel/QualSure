@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UniversityHomeComponent } from './university-home.component';
 import { UniversityDegreeAddComponent } from './university-degree-add/university-degree-add.component';
+import { UniversityViewComponent } from './university-view/university-view.component';
 
 import { DegreeDetailComponent } from './degree-detail/degree-detail.component';
 import { DegreesComponent } from './degrees/degrees.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: '',
     component: UniversityHomeComponent,
     children: [
+      {
+        path: '',
+        component: UniversityViewComponent
+      },
       {
         path: 'degrees',
         component: DegreesComponent
