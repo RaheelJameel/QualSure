@@ -16,6 +16,8 @@ export class VerifyComponent implements OnInit {
   valid: boolean;
   invalid: boolean;
 
+  initDegreeModel: Degree;
+
   constructor(
     private degreeService: DegreeService,
     private location: Location
@@ -23,7 +25,35 @@ export class VerifyComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.initData();
+
   }
+
+  private initData() {
+    // TODO: implement this with a call to service
+    this.initDegreeModel = {
+      firstName: 'Razer',
+      lastName: 'Mantis',
+      degreeType: 'BS',
+      field: 'CS',
+      gradYear: 2018,
+      gpa: 3.0,
+      fatherFirstName: 'Lenovo',
+      fatherLastName: 'Apple'
+    };
+    //   this.degreeService.getDegrees().subscribe(deg => console.log(deg));
+    // // this.initDegreeModel = {
+    // //   firstName: 'Alpha',
+    // //   lastName: 'Bravo',
+    // //   degreeType: 'BS',
+    // //   field: 'CS',
+    // //   gradYear: 2018,
+    // //   gpa: 3.5,
+    // //   fatherFirstName: 'Charlie',
+    // //   fatherLastName: 'Khan'
+    // // };
+  }
+
   goBack(): void {
     this.location.back();
   }
