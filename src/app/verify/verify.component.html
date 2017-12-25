@@ -1,6 +1,6 @@
 <button (click)="goBack()">Previous Page</button>
 <br>
-<app-degree1-form *ngIf="!submitted" (degreeOutput)="formSubmit($event)"></app-degree1-form>
+<app-degree1-form *ngIf="!submitted" [degreeModel]="initDegreeModel"  (degreeOutput)="formSubmit($event)"></app-degree1-form>
 <div *ngIf="submitted && !valid && !invalid">
   <p>
     Verifying Degree Please Wait...
