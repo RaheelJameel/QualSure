@@ -15,6 +15,7 @@ import { DegreesComponent } from './degrees/degrees.component';
 import { DegreeService } from './degree.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
+import { UniversityViewComponent } from './university-view/university-view.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MessagesComponent } from './messages/messages.component';
     DegreeDetailComponent,
     DegreeSearchComponent,
     MessagesComponent,
+    UniversityViewComponent,
   ],
   providers: [ DegreeService, MessageService ],
 })
