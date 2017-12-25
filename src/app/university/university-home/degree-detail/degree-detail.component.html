@@ -6,10 +6,18 @@
     </ol>
 </div>
 <div *ngIf="degree">
-
+<div *ngIf="!submitted">
     <h2>Degree Details</h2>
     <app-degree-form [degreeModel]="degree" (degreeOutput)="save($event)" [submitButtonText]="'Save Changes'"></app-degree-form>
-       
+    </div>
+       <div *ngIf="submitted" class="reponse-containers">
+    <div>
+      <img src="/assets/images/cyan-loading.gif">
+      <p>
+        Saving Degree Please Wait...
+      </p>
+    </div>
+  </div>
    
    
   </div>

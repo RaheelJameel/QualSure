@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { Degree } from '../../../common/degree-form/degree';
 import { DegreeService } from '../degree.service';
@@ -11,10 +12,15 @@ import { DegreeService } from '../degree.service';
 })
 export class UniversityDegreeAddComponent implements OnInit {
 
+  submitted: boolean;
+
   initDegreeModel: Degree;
   newDegreeModel: Degree;
 
-  constructor(private degreeService: DegreeService ) { }
+  constructor(
+    private degreeService: DegreeService,
+    private location: Location
+    ) { }
 
   ngOnInit() {
     this.initData();
@@ -34,12 +40,15 @@ export class UniversityDegreeAddComponent implements OnInit {
     };
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   formSubmit(degreeModel: Degree) {
+    this.submitted = true;
     console.log('UniversityDegreeAddComponent: formSubmit called with degree->', degreeModel);
     this.newDegreeModel = degreeModel;
-    alert('Form Submitted: Check console');
-    this.degreeService.addDegree(this.newDegreeModel).subscribe();
-
+    this.degreeService.addDegree(this.newDegreeModel).subscribe(() => this.goBack());
   }
 
 }

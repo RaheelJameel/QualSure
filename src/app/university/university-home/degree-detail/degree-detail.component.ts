@@ -14,6 +14,8 @@ import { DegreeService } from '../degree.service';
 export class DegreeDetailComponent implements OnInit {
   @Input() degree: Degree;
 
+  submitted: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private degreeService: DegreeService,
@@ -35,6 +37,7 @@ export class DegreeDetailComponent implements OnInit {
   }
 
  save(degreeModel?: Degree): void {
+   this.submitted = true;
    if (degreeModel) {
     this.degree = degreeModel;
    }

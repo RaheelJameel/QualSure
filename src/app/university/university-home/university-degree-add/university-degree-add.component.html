@@ -5,5 +5,13 @@
     </ol>
 </div>
 <div>
-  <app-degree-form [degreeModel]="initDegreeModel" (degreeOutput)="formSubmit($event)"></app-degree-form>
+  <app-degree-form *ngIf="!submitted" [degreeModel]="initDegreeModel" (degreeOutput)="formSubmit($event)"></app-degree-form>
+  <div *ngIf="submitted" class="reponse-containers">
+    <div>
+      <img src="/assets/images/cyan-loading.gif">
+      <p>
+        Adding Degree Please Wait...
+      </p>
+    </div>
+  </div>
 </div>
