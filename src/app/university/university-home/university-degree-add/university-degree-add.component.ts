@@ -28,16 +28,6 @@ export class UniversityDegreeAddComponent implements OnInit {
 
   private initData() {
     // TODO: implement this with a call to service
-    this.initDegreeModel = {
-      firstName: 'Razer',
-      lastName: 'Mantis',
-      degreeType: 'BS',
-      field: 'CS',
-      gradYear: 2018,
-      gpa: 3.0,
-      fatherFirstName: 'Lenovo',
-      fatherLastName: 'Apple'
-    };
   }
 
   goBack(): void {
