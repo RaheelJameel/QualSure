@@ -14,7 +14,7 @@ import { NonNegativeNumberValidator } from '../validators/non-negative-number';
 export class DegreeFormComponent implements OnInit {
 
   @Input() degreeModel: Degree;
-  @Input() submitButtonText = 'Submit';
+  @Input() submitButtonText = 'Add';
   @Output() degreeOutput: EventEmitter<Degree> = new EventEmitter<Degree>();
 
   degreeForm: FormGroup;
